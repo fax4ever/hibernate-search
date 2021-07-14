@@ -25,6 +25,7 @@ import javax.persistence.OneToMany;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.dialect.SQLServerDialect;
 import org.hibernate.search.integrationtest.mapper.orm.realbackend.testsupport.BackendConfigurations;
 import org.hibernate.search.mapper.orm.Search;
 import org.hibernate.search.mapper.orm.cfg.HibernateOrmMapperSettings;
@@ -35,6 +36,7 @@ import org.hibernate.search.mapper.pojo.mapping.definition.annotation.Indexed;
 import org.hibernate.search.mapper.pojo.mapping.definition.annotation.IndexedEmbedded;
 import org.hibernate.search.util.common.impl.SuppressingCloser;
 import org.hibernate.search.util.impl.integrationtest.mapper.orm.OrmSetupHelper;
+import org.hibernate.search.util.impl.integrationtest.mapper.orm.dialect.HibernateORMSkipTestHelper;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -60,6 +62,9 @@ public class ConcurrentEmbeddedUpdateLimitationIT {
 				// This is absolutely necessary to avoid false positives in this test
 				.withProperty( HibernateOrmMapperSettings.AUTOMATIC_INDEXING_SYNCHRONIZATION_STRATEGY, "sync" )
 				.setup( Book.class, Author.class, BookEdition.class );
+
+		HibernateORMSkipTestHelper.skipForDialect( sessionFactory, SQLServerDialect.class,
+				"The execution could provoke a deadlock on SQLServer that will be solved aborting conflicting requests from client" );
 
 		reproducer();
 
