@@ -16,6 +16,8 @@
 
     <properties>
         <java.module.name>org.hibernate.search.mapper.orm</java.module.name>
+
+        <test.database.run.skip>false</test.database.run.skip>
     </properties>
 
     <dependencies>
