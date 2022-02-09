@@ -11,7 +11,7 @@
 
     <groupId>org.hibernate.search</groupId>
     <artifactId>hibernate-search-parent</artifactId>
-    <version>6.1.0-SNAPSHOT</version>
+    <version>6.2.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Hibernate Search Root POM</name>
@@ -202,20 +202,21 @@
 
         <!-- >>> Elasticsearch -->
         <!-- The version of the Elasticsearch client used by Hibernate Search, independently from the version of the remote cluster -->
-        <!-- Use the latest open-source version here. Currently, low-level clients are open-source even in 7.16+ -->
-        <version.org.elasticsearch.client>7.16.3</version.org.elasticsearch.client>
+        <!-- Use the latest open-source version here. Currently, low-level clients are open-source even in 7.17+ -->
+        <version.org.elasticsearch.client>7.17.0</version.org.elasticsearch.client>
         <!-- The main compatible version of Elasticsearch, advertised by default. Used in documentation links. -->
         <!-- When updating the following version you will likely need to update the test profiles as well,
              to make sure the corresponding profile (e.g. elasticsearch-7.12) becomes the default. -->
-        <version.org.elasticsearch.compatible.main>${version.org.elasticsearch.latest-7.16}</version.org.elasticsearch.compatible.main>
+        <version.org.elasticsearch.compatible.main>${version.org.elasticsearch.latest-7.17}</version.org.elasticsearch.compatible.main>
         <documentation.org.elasticsearch.url>https://www.elastic.co/guide/en/elasticsearch/reference/${parsed-version.org.elasticsearch.compatible.main.majorVersion}.${parsed-version.org.elasticsearch.compatible.main.minorVersion}</documentation.org.elasticsearch.url>
         <!-- The versions of Elasticsearch/OpenSearch advertised as compatible with Hibernate Search -->
         <!-- Make sure that 7.10 stays explicitly mentioned here, because that's the last open-source version -->
-        <version.org.elasticsearch.compatible.regularly-tested.text>5.6, 6.8, 7.10 or 7.16</version.org.elasticsearch.compatible.regularly-tested.text>
+        <version.org.elasticsearch.compatible.regularly-tested.text>5.6, 6.8, 7.10 or 7.17</version.org.elasticsearch.compatible.regularly-tested.text>
         <version.org.opensearch.compatible.regularly-tested.text>1.0 or 1.2</version.org.opensearch.compatible.regularly-tested.text>
         <!-- The versions of Elasticsearch that may work, but are not given priority for bugfixes and new features -->
         <version.org.elasticsearch.compatible.not-regularly-tested.text>6.0 or 7.0</version.org.elasticsearch.compatible.not-regularly-tested.text>
         <!-- The latest micro of each Elasticsearch branch -->
+        <version.org.elasticsearch.latest-7.17>7.17.0</version.org.elasticsearch.latest-7.17>
         <version.org.elasticsearch.latest-7.16>7.16.3</version.org.elasticsearch.latest-7.16>
         <!-- 7.14 and 7.15 have annoying bugs that make almost all of our test suite fail, so we don't test them
              See https://hibernate.atlassian.net/browse/HSEARCH-4340 -->
@@ -250,10 +251,10 @@
         <!-- Reactive-streams: used by the AWS SDK -->
         <version.org.reactivestreams.reactive-streams>1.0.3</version.org.reactivestreams.reactive-streams>
         <!-- slf4j: used by the AWS SDK -->
-        <version.org.slf4j>1.7.33</version.org.slf4j>
+        <version.org.slf4j>1.7.35</version.org.slf4j>
 
         <!-- >>> ORM -->
-        <version.org.hibernate>5.6.4.Final</version.org.hibernate>
+        <version.org.hibernate>5.6.5.Final</version.org.hibernate>
         <javadoc.org.hibernate.url>https://docs.jboss.org/hibernate/orm/${parsed-version.org.hibernate.majorVersion}.${parsed-version.org.hibernate.minorVersion}/javadocs/</javadoc.org.hibernate.url>
         <documentation.org.hibernate.url>https://docs.jboss.org/hibernate/orm/${parsed-version.org.hibernate.majorVersion}.${parsed-version.org.hibernate.minorVersion}/userguide/html_single/Hibernate_User_Guide.html</documentation.org.hibernate.url>
         <version.org.hibernate.commons.annotations>5.1.2.Final</version.org.hibernate.commons.annotations>
@@ -268,10 +269,10 @@
         <version.javax.persistence>2.2</version.javax.persistence>
 
         <!-- >>> ORM 6 / Jakarta Persistence -->
-        <version.org.hibernate.orm>6.0.0.Beta3</version.org.hibernate.orm>
+        <version.org.hibernate.orm>6.0.0.CR1</version.org.hibernate.orm>
         <javadoc.org.hibernate.orm.url>https://docs.jboss.org/hibernate/orm/${parsed-version.org.hibernate.orm.majorVersion}.${parsed-version.org.hibernate.orm.minorVersion}/javadocs/</javadoc.org.hibernate.orm.url>
         <documentation.org.hibernate.orm.url>https://docs.jboss.org/hibernate/orm/${parsed-version.org.hibernate.orm.majorVersion}.${parsed-version.org.hibernate.orm.minorVersion}/userguide/html_single/Hibernate_User_Guide.html</documentation.org.hibernate.orm.url>
-        <version.org.hibernate.commons.annotations.orm6>5.1.2.Final</version.org.hibernate.commons.annotations.orm6>
+        <version.org.hibernate.commons.annotations.orm6>6.0.0.CR1</version.org.hibernate.commons.annotations.orm6>
         <version.jakarta.persistence>3.0.0</version.jakarta.persistence>
 
         <!-- >>> JSR 352 -->
@@ -297,7 +298,7 @@
         <version.jakarta.xml.bind>3.0.1</version.jakarta.xml.bind>
         <version.jakarta.activation>2.0.1</version.jakarta.activation>
         <version.org.jboss.spec.javax.interceptor.jboss-interceptor-api_1.2_spec>1.0.1.Final</version.org.jboss.spec.javax.interceptor.jboss-interceptor-api_1.2_spec>
-        <version.jakarta.interceptor-api>2.0.0</version.jakarta.interceptor-api>
+        <version.jakarta.interceptor-api>2.0.1</version.jakarta.interceptor-api>
         <!-- This is used to generate a link to the Java EE javadoc -->
         <javadoc.javaee.url>https://javaee.github.io/javaee-spec/javadocs/</javadoc.javaee.url>
         <javadoc.jakarta.batch.url>https://jakarta.ee/specifications/batch/2.0/apidocs/</javadoc.jakarta.batch.url>
@@ -310,12 +311,12 @@
         <version.org.osgi.core>6.0.0</version.org.osgi.core>
 
         <version.org.hamcrest>2.2</version.org.hamcrest>
-        <version.org.mockito>4.2.0</version.org.mockito>
+        <version.org.mockito>4.3.1</version.org.mockito>
         <version.org.assertj.assertj-core>3.22.0</version.org.assertj.assertj-core>
         <version.org.awaitily>4.1.1</version.org.awaitily>
         <version.org.skyscreamer.jsonassert>1.5.0</version.org.skyscreamer.jsonassert>
         <version.io.takari.junit>1.2.7</version.io.takari.junit>
-        <version.com.h2database>1.4.200</version.com.h2database>
+        <version.com.h2database>2.1.210</version.com.h2database>
         <version.com.github.tomakehurst.wiremock>2.27.2</version.com.github.tomakehurst.wiremock>
         <version.org.apache.commons.lang3>3.12.0</version.org.apache.commons.lang3>
         <version.org.apache.commons.math3>3.6.1</version.org.apache.commons.math3>
@@ -359,13 +360,13 @@
         <version.help.plugin>3.2.0</version.help.plugin>
         <version.install.plugin>2.5.2</version.install.plugin>
         <version.io.takari.maven>0.7.7</version.io.takari.maven>
-        <version.japicmp.plugin>0.15.4</version.japicmp.plugin>
+        <version.japicmp.plugin>0.15.6</version.japicmp.plugin>
         <version.jar.plugin>3.2.2</version.jar.plugin>
         <version.javadoc.plugin>3.3.1</version.javadoc.plugin>
         <version.jdeps.plugin>0.5.1</version.jdeps.plugin>
         <version.nexus-staging.plugin>1.6.8</version.nexus-staging.plugin>
         <version.processor.plugin>4.5-jdk8</version.processor.plugin>
-        <version.project-info.plugin>3.1.2</version.project-info.plugin>
+        <version.project-info.plugin>3.2.1</version.project-info.plugin>
         <version.release.plugin>2.5.3</version.release.plugin>
         <version.resources.plugin>3.2.0</version.resources.plugin>
         <version.shade.plugin>3.2.4</version.shade.plugin>
@@ -378,23 +379,17 @@
         <version.jacoco.plugin>0.8.7</version.jacoco.plugin>
         <version.coveralls.plugin>4.3.0</version.coveralls.plugin>
         <version.com.buschmais.jqassistant.plugin>1.11.1</version.com.buschmais.jqassistant.plugin>
-        <version.docker.maven.plugin>0.38.1</version.docker.maven.plugin>
+        <version.docker.maven.plugin>0.39.0</version.docker.maven.plugin>
         <version.moditect.plugin>1.0.0.RC2</version.moditect.plugin>
         <version.sonar.plugin>3.9.1.2184</version.sonar.plugin>
         <version.scripting.plugin>3.0.0</version.scripting.plugin>
         <version.gpg.plugin>3.0.1</version.gpg.plugin>
         <version.org.codehaus.groovy-jsr223>3.0.9</version.org.codehaus.groovy-jsr223>
-        <!--
-            Please don't change the name of this property, it may be used and
-            overridden by a CI job of the Checkstyle project so that they can
-            check for regressions. Which is obviously good for us, too.
-         -->
-        <puppycrawl.checkstyle.version>8.41</puppycrawl.checkstyle.version>
-        <version.com.puppycrawl.tools.checkstyle>9.2.1</version.com.puppycrawl.tools.checkstyle>
+        <version.com.puppycrawl.tools.checkstyle>9.3</version.com.puppycrawl.tools.checkstyle>
 
         <!-- Asciidoctor -->
 
-        <version.asciidoctor.plugin>2.2.1</version.asciidoctor.plugin>
+        <version.asciidoctor.plugin>2.2.2</version.asciidoctor.plugin>
         <version.org.hibernate.infra.hibernate-asciidoctor-theme>1.0.4.Final</version.org.hibernate.infra.hibernate-asciidoctor-theme>
         <version.org.jruby>9.3.2.0</version.org.jruby>
         <version.org.asciidoctor.asciidoctorj>2.5.3</version.org.asciidoctor.asciidoctorj>
@@ -439,6 +434,9 @@
         <java-version.test.launcher.java_home>${java-version.test.compiler.java_home}</java-version.test.launcher.java_home>
         <java-version.test.launcher>${java-version.test.launcher.java_home}/bin/java</java-version.test.launcher>
 
+        <!-- Set this through a property so that it can be overridden from the commandline -->
+        <maven.compiler.failOnWarning>true</maven.compiler.failOnWarning>
+
         <maven.compiler.release>${java-version.main.release}</maven.compiler.release>
         <maven.compiler.testRelease>${java-version.test.release}</maven.compiler.testRelease>
 
@@ -454,7 +452,7 @@
                 Note the version of ECJ is overridden because the one bundled with the latest plexus-compiler version
                 is outdated and leads to compilation errors.
          -->
-        <version.org.codehaus.plexus.plexus-compiler.compiler-eclipse>2.9.0</version.org.codehaus.plexus.plexus-compiler.compiler-eclipse>
+        <version.org.codehaus.plexus.plexus-compiler.compiler-eclipse>2.10.0</version.org.codehaus.plexus.plexus-compiler.compiler-eclipse>
         <version.org.eclipse.jdt.ecj>3.28.0</version.org.eclipse.jdt.ecj>
 
         <!--
@@ -1670,7 +1668,7 @@
                     <configuration>
                         <showWarnings>true</showWarnings>
                         <showDeprecation>true</showDeprecation>
-                        <failOnWarning>true</failOnWarning>
+                        <failOnWarning>${maven.compiler.failOnWarning}</failOnWarning>
                         <release>${maven.compiler.release}</release>
                         <testRelease>${maven.compiler.testRelease}</testRelease>
                         <encoding>UTF-8</encoding>
@@ -2339,20 +2337,8 @@
             </activation>
             <properties>
                 <surefire.jvm.args.java-version></surefire.jvm.args.java-version>
+                <maven.compiler.failOnWarning>false</maven.compiler.failOnWarning>
             </properties>
-            <build>
-                <pluginManagement>
-                    <plugins>
-                        <plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-compiler-plugin</artifactId>
-                            <configuration>
-                                <failOnWarning>false</failOnWarning>
-                            </configuration>
-                        </plugin>
-                    </plugins>
-                </pluginManagement>
-            </build>
         </profile>
 
         <profile>
@@ -2366,17 +2352,6 @@
         </profile>
 
         <profile>
-            <id>jdk16+</id>
-            <activation>
-                <jdk>[16,)</jdk>
-            </activation>
-            <properties>
-                <!-- ForbiddenAPIs doesn't provide bundled signatures for JDK16+ yet. -->
-                <forbiddenapis.skip>true</forbiddenapis.skip>
-            </properties>
-        </profile>
-
-        <profile>
             <id>testWithJdk16</id>
             <activation>
                 <property>
@@ -2385,14 +2360,6 @@
                 </property>
             </activation>
             <properties>
-                <!-- ForbiddenAPIs doesn't provide bundled signatures for JDK16 yet. -->
-                <forbiddenapis.skip>true</forbiddenapis.skip>
-                <!-- We need net.bytebuddy.experimental=true to make BytecodeEnhancementIT and mockito-based tests pass -->
-                <surefire.jvm.args.java-version>
-                    -Djdk.attach.allowAttachSelf=true
-                    -Dnet.bytebuddy.experimental=true
-                    --illegal-access=deny
-                </surefire.jvm.args.java-version>
                 <!-- Spring isn't ready for JDK16 yet -->
                 <failsafe.spring.skip>true</failsafe.spring.skip>
             </properties>
@@ -2407,13 +2374,6 @@
                 </property>
             </activation>
             <properties>
-                <!-- ForbiddenAPIs doesn't provide bundled signatures for JDK17 yet. -->
-                <forbiddenapis.skip>true</forbiddenapis.skip>
-                <!-- We need net.bytebuddy.experimental=true to make BytecodeEnhancementIT and mockito-based tests pass -->
-                <surefire.jvm.args.java-version>
-                    -Djdk.attach.allowAttachSelf=true
-                    -Dnet.bytebuddy.experimental=true
-                </surefire.jvm.args.java-version>
                 <!-- Spring isn't ready for JDK17 yet -->
                 <failsafe.spring.skip>true</failsafe.spring.skip>
             </properties>
@@ -2430,12 +2390,28 @@
             <properties>
                 <!-- ForbiddenAPIs doesn't provide bundled signatures for JDK18 yet. -->
                 <forbiddenapis.skip>true</forbiddenapis.skip>
+                <!-- Spring isn't ready for JDK18 yet -->
+                <failsafe.spring.skip>true</failsafe.spring.skip>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>testWithJdk19</id>
+            <activation>
+                <property>
+                    <name>java-version.test.release</name>
+                    <value>19</value>
+                </property>
+            </activation>
+            <properties>
+                <!-- ForbiddenAPIs doesn't provide bundled signatures for JDK19 yet. -->
+                <forbiddenapis.skip>true</forbiddenapis.skip>
                 <!-- We need net.bytebuddy.experimental=true to make BytecodeEnhancementIT and mockito-based tests pass -->
                 <surefire.jvm.args.java-version>
                     -Djdk.attach.allowAttachSelf=true
                     -Dnet.bytebuddy.experimental=true
                 </surefire.jvm.args.java-version>
-                <!-- Spring isn't ready for JDK18 yet -->
+                <!-- Spring isn't ready for JDK19 yet -->
                 <failsafe.spring.skip>true</failsafe.spring.skip>
             </properties>
         </profile>
