@@ -202,20 +202,21 @@
 
         <!-- >>> Elasticsearch -->
         <!-- The version of the Elasticsearch client used by Hibernate Search, independently from the version of the remote cluster -->
-        <!-- Use the latest open-source version here. Currently, low-level clients are open-source even in 7.17+ -->
-        <version.org.elasticsearch.client>7.17.0</version.org.elasticsearch.client>
+        <!-- Use the latest open-source version here. Currently, low-level clients are open-source even in 8.0+ -->
+        <version.org.elasticsearch.client>8.0.0</version.org.elasticsearch.client>
         <!-- The main compatible version of Elasticsearch, advertised by default. Used in documentation links. -->
         <!-- When updating the following version you will likely need to update the test profiles as well,
-             to make sure the corresponding profile (e.g. elasticsearch-7.12) becomes the default. -->
-        <version.org.elasticsearch.compatible.main>${version.org.elasticsearch.latest-7.17}</version.org.elasticsearch.compatible.main>
+             to make sure the corresponding profile (e.g. elasticsearch-8.0) becomes the default. -->
+        <version.org.elasticsearch.compatible.main>${version.org.elasticsearch.latest-8.0}</version.org.elasticsearch.compatible.main>
         <documentation.org.elasticsearch.url>https://www.elastic.co/guide/en/elasticsearch/reference/${parsed-version.org.elasticsearch.compatible.main.majorVersion}.${parsed-version.org.elasticsearch.compatible.main.minorVersion}</documentation.org.elasticsearch.url>
         <!-- The versions of Elasticsearch/OpenSearch advertised as compatible with Hibernate Search -->
         <!-- Make sure that 7.10 stays explicitly mentioned here, because that's the last open-source version -->
-        <version.org.elasticsearch.compatible.regularly-tested.text>5.6, 6.8, 7.10 or 7.17</version.org.elasticsearch.compatible.regularly-tested.text>
+        <version.org.elasticsearch.compatible.regularly-tested.text>5.6, 6.8, 7.10, 7.17 or 8.0</version.org.elasticsearch.compatible.regularly-tested.text>
         <version.org.opensearch.compatible.regularly-tested.text>1.0 or 1.2</version.org.opensearch.compatible.regularly-tested.text>
         <!-- The versions of Elasticsearch that may work, but are not given priority for bugfixes and new features -->
         <version.org.elasticsearch.compatible.not-regularly-tested.text>6.0 or 7.0</version.org.elasticsearch.compatible.not-regularly-tested.text>
         <!-- The latest micro of each Elasticsearch branch -->
+        <version.org.elasticsearch.latest-8.0>8.0.0</version.org.elasticsearch.latest-8.0>
         <version.org.elasticsearch.latest-7.17>7.17.0</version.org.elasticsearch.latest-7.17>
         <version.org.elasticsearch.latest-7.16>7.16.3</version.org.elasticsearch.latest-7.16>
         <!-- 7.14 and 7.15 have annoying bugs that make almost all of our test suite fail, so we don't test them
@@ -237,7 +238,7 @@
         <!-- The latest micro of other Elasticsearch distributions -->
         <version.org.opensearch.latest-1.2>1.2.1</version.org.opensearch.latest-1.2>
         <version.org.opensearch.latest-1.0>1.0.0</version.org.opensearch.latest-1.0>
-        <version.com.google.code.gson>2.8.9</version.com.google.code.gson>
+        <version.com.google.code.gson>2.9.0</version.com.google.code.gson>
         <version.software.amazon.awssdk>2.17.94</version.software.amazon.awssdk>
         <!-- Jackson: used by the Elasticsearch REST client, the AWS SDK and in tests (wiremock, ...) -->
         <version.com.fasterxml.jackson>2.13.1</version.com.fasterxml.jackson>
@@ -251,7 +252,7 @@
         <!-- Reactive-streams: used by the AWS SDK -->
         <version.org.reactivestreams.reactive-streams>1.0.3</version.org.reactivestreams.reactive-streams>
         <!-- slf4j: used by the AWS SDK -->
-        <version.org.slf4j>1.7.35</version.org.slf4j>
+        <version.org.slf4j>1.7.36</version.org.slf4j>
 
         <!-- >>> ORM -->
         <version.org.hibernate>5.6.5.Final</version.org.hibernate>
@@ -321,7 +322,7 @@
         <version.org.apache.commons.lang3>3.12.0</version.org.apache.commons.lang3>
         <version.org.apache.commons.math3>3.6.1</version.org.apache.commons.math3>
         <version.org.apache.avro>1.11.0</version.org.apache.avro>
-        <version.org.jboss.weld>3.1.5.SP1</version.org.jboss.weld>
+        <version.org.jboss.weld>3.1.9.Final</version.org.jboss.weld>
         <version.org.jboss.weld.jakarta>4.0.2.Final</version.org.jboss.weld.jakarta>
 
         <!-- >>> Performance tests -->
@@ -348,7 +349,7 @@
         <version.bundle.plugin>5.1.4</version.bundle.plugin>
         <version.clean.plugin>3.1.0</version.clean.plugin>
         <!-- Needing 3.6.2 at least because of MCOMPILER-294 -->
-        <version.compiler.plugin>3.9.0</version.compiler.plugin>
+        <version.compiler.plugin>3.10.0</version.compiler.plugin>
         <version.dependency.plugin>3.2.0</version.dependency.plugin>
         <!-- Check dependencies for security vulnerabilities -->
         <version.dependency-check.plugin>6.5.3</version.dependency-check.plugin>
@@ -362,15 +363,15 @@
         <version.io.takari.maven>0.7.7</version.io.takari.maven>
         <version.japicmp.plugin>0.15.6</version.japicmp.plugin>
         <version.jar.plugin>3.2.2</version.jar.plugin>
-        <version.javadoc.plugin>3.3.1</version.javadoc.plugin>
+        <version.javadoc.plugin>3.3.2</version.javadoc.plugin>
         <version.jdeps.plugin>0.5.1</version.jdeps.plugin>
-        <version.nexus-staging.plugin>1.6.8</version.nexus-staging.plugin>
+        <version.nexus-staging.plugin>1.6.11</version.nexus-staging.plugin>
         <version.processor.plugin>4.5-jdk8</version.processor.plugin>
-        <version.project-info.plugin>3.2.1</version.project-info.plugin>
+        <version.project-info.plugin>3.2.2</version.project-info.plugin>
         <version.release.plugin>2.5.3</version.release.plugin>
         <version.resources.plugin>3.2.0</version.resources.plugin>
         <version.shade.plugin>3.2.4</version.shade.plugin>
-        <version.site.plugin>3.10.0</version.site.plugin>
+        <version.site.plugin>3.11.0</version.site.plugin>
         <version.source.plugin>3.2.1</version.source.plugin>
         <!-- Surefire versions are a minefield of bugs: be careful with upgrades -->
         <version.surefire.plugin>3.0.0-M5</version.surefire.plugin>
@@ -452,7 +453,7 @@
                 Note the version of ECJ is overridden because the one bundled with the latest plexus-compiler version
                 is outdated and leads to compilation errors.
          -->
-        <version.org.codehaus.plexus.plexus-compiler.compiler-eclipse>2.9.0</version.org.codehaus.plexus.plexus-compiler.compiler-eclipse>
+        <version.org.codehaus.plexus.plexus-compiler.compiler-eclipse>2.10.0</version.org.codehaus.plexus.plexus-compiler.compiler-eclipse>
         <version.org.eclipse.jdt.ecj>3.28.0</version.org.eclipse.jdt.ecj>
 
         <!--
