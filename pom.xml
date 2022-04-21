@@ -256,7 +256,7 @@
         <version.org.slf4j>1.7.36</version.org.slf4j>
 
         <!-- >>> ORM -->
-        <version.org.hibernate>5.6.7.Final</version.org.hibernate>
+        <version.org.hibernate>5.6.8.Final</version.org.hibernate>
         <javadoc.org.hibernate.url>https://docs.jboss.org/hibernate/orm/${parsed-version.org.hibernate.majorVersion}.${parsed-version.org.hibernate.minorVersion}/javadocs/</javadoc.org.hibernate.url>
         <documentation.org.hibernate.url>https://docs.jboss.org/hibernate/orm/${parsed-version.org.hibernate.majorVersion}.${parsed-version.org.hibernate.minorVersion}/userguide/html_single/Hibernate_User_Guide.html</documentation.org.hibernate.url>
         <version.org.hibernate.commons.annotations>5.1.2.Final</version.org.hibernate.commons.annotations>
@@ -275,12 +275,12 @@
         <javadoc.org.hibernate.orm.url>https://docs.jboss.org/hibernate/orm/${parsed-version.org.hibernate.orm.majorVersion}.${parsed-version.org.hibernate.orm.minorVersion}/javadocs/</javadoc.org.hibernate.orm.url>
         <documentation.org.hibernate.orm.url>https://docs.jboss.org/hibernate/orm/${parsed-version.org.hibernate.orm.majorVersion}.${parsed-version.org.hibernate.orm.minorVersion}/userguide/html_single/Hibernate_User_Guide.html</documentation.org.hibernate.orm.url>
         <version.org.hibernate.commons.annotations.orm6>6.0.0.Final</version.org.hibernate.commons.annotations.orm6>
-        <version.jakarta.persistence>3.0.0</version.jakarta.persistence>
+        <version.jakarta.persistence>3.1.0</version.jakarta.persistence>
 
         <!-- >>> JSR 352 -->
         <version.javax.batch>1.0.1</version.javax.batch>
         <version.jakarta.batch>2.1.0</version.jakarta.batch>
-        <version.org.jberet>1.4.6.Final</version.org.jberet>
+        <version.org.jberet>1.4.7.Final</version.org.jberet>
         <version.org.jberet.jakarta>2.0.4.Final</version.org.jberet.jakarta>
 
         <!-- >>> Java EE/Jakarta EE dependencies -->
@@ -297,10 +297,10 @@
              (Hibernate ORM, JBatch, ...).
              Ideally, we should remove this dependency management when the dependencies fix their dependency divergence.
          -->
-        <version.jakarta.xml.bind>3.0.1</version.jakarta.xml.bind>
-        <version.jakarta.activation>2.0.1</version.jakarta.activation>
+        <version.jakarta.xml.bind>4.0.0</version.jakarta.xml.bind>
+        <version.jakarta.activation>2.1.0</version.jakarta.activation>
         <version.org.jboss.spec.javax.interceptor.jboss-interceptor-api_1.2_spec>1.0.1.Final</version.org.jboss.spec.javax.interceptor.jboss-interceptor-api_1.2_spec>
-        <version.jakarta.interceptor-api>2.0.1</version.jakarta.interceptor-api>
+        <version.jakarta.interceptor-api>2.1.0</version.jakarta.interceptor-api>
         <!-- This is used to generate a link to the Java EE javadoc -->
         <javadoc.javaee.url>https://javaee.github.io/javaee-spec/javadocs/</javadoc.javaee.url>
         <javadoc.jakarta.batch.url>https://jakarta.ee/specifications/batch/2.0/apidocs/</javadoc.jakarta.batch.url>
@@ -318,7 +318,7 @@
         <version.org.awaitily>4.2.0</version.org.awaitily>
         <version.org.skyscreamer.jsonassert>1.5.0</version.org.skyscreamer.jsonassert>
         <version.io.takari.junit>1.2.7</version.io.takari.junit>
-        <version.com.h2database>2.1.210</version.com.h2database>
+        <version.com.h2database>2.1.212</version.com.h2database>
         <version.com.github.tomakehurst.wiremock>2.27.2</version.com.github.tomakehurst.wiremock>
         <version.org.apache.commons.lang3>3.12.0</version.org.apache.commons.lang3>
         <version.org.apache.commons.math3>3.6.1</version.org.apache.commons.math3>
@@ -348,7 +348,7 @@
         <version.buildhelper.plugin>3.3.0</version.buildhelper.plugin>
         <version.checkstyle.plugin>3.1.2</version.checkstyle.plugin>
         <version.bundle.plugin>5.1.4</version.bundle.plugin>
-        <version.clean.plugin>3.1.0</version.clean.plugin>
+        <version.clean.plugin>3.2.0</version.clean.plugin>
         <!-- Needing 3.6.2 at least because of MCOMPILER-294 -->
         <version.compiler.plugin>3.10.1</version.compiler.plugin>
         <version.dependency.plugin>3.3.0</version.dependency.plugin>
@@ -366,7 +366,7 @@
         <version.jar.plugin>3.2.2</version.jar.plugin>
         <version.javadoc.plugin>3.3.2</version.javadoc.plugin>
         <version.jdeps.plugin>0.5.1</version.jdeps.plugin>
-        <version.nexus-staging.plugin>1.6.12</version.nexus-staging.plugin>
+        <version.nexus-staging.plugin>1.6.13</version.nexus-staging.plugin>
         <version.processor.plugin>4.5-jdk8</version.processor.plugin>
         <version.project-info.plugin>3.2.2</version.project-info.plugin>
         <version.release.plugin>2.5.3</version.release.plugin>
@@ -376,9 +376,9 @@
         <version.source.plugin>3.2.1</version.source.plugin>
         <!-- Surefire versions are a minefield of bugs: be careful with upgrades -->
         <version.surefire.plugin>3.0.0-M5</version.surefire.plugin>
-        <version.surefire.plugin.java-version.asm>9.2</version.surefire.plugin.java-version.asm>
+        <version.surefire.plugin.java-version.asm>9.3</version.surefire.plugin.java-version.asm>
         <version.failsafe.plugin>${version.surefire.plugin}</version.failsafe.plugin>
-        <version.jacoco.plugin>0.8.7</version.jacoco.plugin>
+        <version.jacoco.plugin>0.8.8</version.jacoco.plugin>
         <version.coveralls.plugin>4.3.0</version.coveralls.plugin>
         <version.com.buschmais.jqassistant.plugin>1.11.1</version.com.buschmais.jqassistant.plugin>
         <version.docker.maven.plugin>0.39.1</version.docker.maven.plugin>
@@ -1074,8 +1074,8 @@
                 <version>${version.jakarta.xml.bind}</version>
             </dependency>
             <dependency>
-                <groupId>com.sun.activation</groupId>
-                <artifactId>jakarta.activation</artifactId>
+                <groupId>jakarta.activation</groupId>
+                <artifactId>jakarta.activation-api</artifactId>
                 <version>${version.jakarta.activation}</version>
             </dependency>
 
@@ -2552,6 +2552,10 @@
                      Here's the issue in the IDEA bug tracker: https://youtrack.jetbrains.com/issue/IDEA-85478
                      It's fixed in 2022.1 EAP 6, so hopefully we'll be able to get rid of this soon. -->
                 <java-version.main.release>${java-version.test.release}</java-version.main.release>
+                <!-- Dependency convergence checks seem to fail in IntelliJ IDEA,
+                     for some reason. Maybe it's because of the two additional dependencies below.
+                     Anyway, let's disable these checks so the build works correctly in IDEA. -->
+                <enforcer.dependencyconvergence.skip>true</enforcer.dependencyconvergence.skip>
             </properties>
             <dependencies>
                 <!-- Intellij IDEA doesn't understand <annotationProcessorPaths> in
