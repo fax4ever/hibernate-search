@@ -259,7 +259,7 @@
         <version.org.hibernate>5.6.8.Final</version.org.hibernate>
         <javadoc.org.hibernate.url>https://docs.jboss.org/hibernate/orm/${parsed-version.org.hibernate.majorVersion}.${parsed-version.org.hibernate.minorVersion}/javadocs/</javadoc.org.hibernate.url>
         <documentation.org.hibernate.url>https://docs.jboss.org/hibernate/orm/${parsed-version.org.hibernate.majorVersion}.${parsed-version.org.hibernate.minorVersion}/userguide/html_single/Hibernate_User_Guide.html</documentation.org.hibernate.url>
-        <version.org.hibernate.commons.annotations>5.1.2.Final</version.org.hibernate.commons.annotations>
+        <version.org.hibernate.commons.annotations>6.0.0.Final</version.org.hibernate.commons.annotations>
         <!-- This version must be kept in sync with the version of the dependency in Hibernate ORM.
              DO NOT USE DEPENDENCY MANAGEMENT FOR THIS DEPENDENCY!
              If we do not use dependency management for this dependency, we get a build failure
@@ -269,6 +269,14 @@
           -->
         <version.org.jboss.jandex>2.4.2.Final</version.org.jboss.jandex>
         <version.javax.persistence>2.2</version.javax.persistence>
+        <!-- This version must be kept in sync with the version of the dependency in Hibernate ORM.
+             DO NOT USE DEPENDENCY MANAGEMENT IN THE ROOT POM FOR THIS DEPENDENCY!
+             If we do not use dependency management for this dependency, we get a build failure
+             when the versions start diverging, thanks to the maven-enforcer-plugin
+             and to an artificial dependency in the mapper-orm artifact
+             (which is only necessary for the maven-enforcer-plugin checks to work).
+          -->
+        <version.net.bytebuddy>1.12.9</version.net.bytebuddy>
 
         <!-- >>> ORM 6 / Jakarta Persistence -->
         <version.org.hibernate.orm>6.0.0.Final</version.org.hibernate.orm>
@@ -276,6 +284,7 @@
         <documentation.org.hibernate.orm.url>https://docs.jboss.org/hibernate/orm/${parsed-version.org.hibernate.orm.majorVersion}.${parsed-version.org.hibernate.orm.minorVersion}/userguide/html_single/Hibernate_User_Guide.html</documentation.org.hibernate.orm.url>
         <version.org.hibernate.commons.annotations.orm6>6.0.0.Final</version.org.hibernate.commons.annotations.orm6>
         <version.jakarta.persistence>3.1.0</version.jakarta.persistence>
+        <version.net.bytebuddy.orm6>1.12.8</version.net.bytebuddy.orm6>
 
         <!-- >>> JSR 352 -->
         <version.javax.batch>1.0.1</version.javax.batch>
@@ -313,7 +322,7 @@
         <version.org.osgi.core>6.0.0</version.org.osgi.core>
 
         <version.org.hamcrest>2.2</version.org.hamcrest>
-        <version.org.mockito>4.4.0</version.org.mockito>
+        <version.org.mockito>4.5.1</version.org.mockito>
         <version.org.assertj.assertj-core>3.22.0</version.org.assertj.assertj-core>
         <version.org.awaitily>4.2.0</version.org.awaitily>
         <version.org.skyscreamer.jsonassert>1.5.0</version.org.skyscreamer.jsonassert>
@@ -340,7 +349,7 @@
         <version.org.google.guava>31.1-jre</version.org.google.guava>
 
         <!-- >>> Spring integration tests -->
-        <version.org.springframework.boot>2.6.2</version.org.springframework.boot>
+        <version.org.springframework.boot>2.6.7</version.org.springframework.boot>
 
         <!-- Maven plugins versions -->
 
@@ -353,7 +362,7 @@
         <version.compiler.plugin>3.10.1</version.compiler.plugin>
         <version.dependency.plugin>3.3.0</version.dependency.plugin>
         <!-- Check dependencies for security vulnerabilities -->
-        <version.dependency-check.plugin>7.0.4</version.dependency-check.plugin>
+        <version.dependency-check.plugin>7.1.0</version.dependency-check.plugin>
         <version.deploy.plugin>2.8.2</version.deploy.plugin>
         <version.org.eclipse.m2e.lifecycle-mapping>1.0.0</version.org.eclipse.m2e.lifecycle-mapping>
         <version.enforcer.plugin>3.0.0</version.enforcer.plugin>
@@ -364,15 +373,15 @@
         <version.io.takari.maven>0.7.7</version.io.takari.maven>
         <version.japicmp.plugin>0.15.7</version.japicmp.plugin>
         <version.jar.plugin>3.2.2</version.jar.plugin>
-        <version.javadoc.plugin>3.3.2</version.javadoc.plugin>
+        <version.javadoc.plugin>3.4.0</version.javadoc.plugin>
         <version.jdeps.plugin>0.5.1</version.jdeps.plugin>
-        <version.nexus-staging.plugin>1.6.12</version.nexus-staging.plugin>
+        <version.nexus-staging.plugin>1.6.13</version.nexus-staging.plugin>
         <version.processor.plugin>4.5-jdk8</version.processor.plugin>
         <version.project-info.plugin>3.2.2</version.project-info.plugin>
         <version.release.plugin>2.5.3</version.release.plugin>
         <version.resources.plugin>3.2.0</version.resources.plugin>
         <version.shade.plugin>3.3.0</version.shade.plugin>
-        <version.site.plugin>3.11.0</version.site.plugin>
+        <version.site.plugin>3.12.0</version.site.plugin>
         <version.source.plugin>3.2.1</version.source.plugin>
         <!-- Surefire versions are a minefield of bugs: be careful with upgrades -->
         <version.surefire.plugin>3.0.0-M5</version.surefire.plugin>
@@ -387,7 +396,7 @@
         <version.scripting.plugin>3.0.0</version.scripting.plugin>
         <version.gpg.plugin>3.0.1</version.gpg.plugin>
         <version.org.codehaus.groovy-jsr223>3.0.10</version.org.codehaus.groovy-jsr223>
-        <version.com.puppycrawl.tools.checkstyle>10.1</version.com.puppycrawl.tools.checkstyle>
+        <version.com.puppycrawl.tools.checkstyle>10.2</version.com.puppycrawl.tools.checkstyle>
 
         <!-- Asciidoctor -->
 
@@ -2277,7 +2286,7 @@
                 </plugin>
                 <plugin>
                     <artifactId>maven-antrun-plugin</artifactId>
-                    <version>3.0.0</version>
+                    <version>3.1.0</version>
                 </plugin>
             </plugins>
         </pluginManagement>
