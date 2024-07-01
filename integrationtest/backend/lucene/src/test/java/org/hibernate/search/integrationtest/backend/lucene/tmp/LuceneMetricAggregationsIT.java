@@ -6,6 +6,8 @@ package org.hibernate.search.integrationtest.backend.lucene.tmp;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.Map;
+
 import org.hibernate.search.engine.backend.common.DocumentReference;
 import org.hibernate.search.engine.backend.document.DocumentElement;
 import org.hibernate.search.engine.backend.document.IndexFieldReference;
@@ -35,11 +37,24 @@ public class LuceneMetricAggregationsIT {
 
 	private final SimpleMappedIndex<IndexBinding> mainIndex = SimpleMappedIndex.of( IndexBinding::new ).name( "main" );
 	private final AggregationKey<Integer> sumIntegers = AggregationKey.of( "sumIntegers" );
+	private final AggregationKey<Map<Integer, Long>> termIntegers = AggregationKey.of( "termIntegers" );
 
 	@BeforeEach
 	void setup() {
 		setupHelper.start().withIndexes( mainIndex ).setup().integration();
 		initData();
+	}
+
+	@Test
+	public void test_termIntegers() {
+		StubMappingScope scope = mainIndex.createScope();
+		SearchQuery<DocumentReference> query = scope.query()
+				.where( f -> f.matchAll() )
+				.aggregation( termIntegers, f -> f.terms().field( "integer", Integer.class ) )
+				.toQuery();
+
+		SearchResult<DocumentReference> result = query.fetch( 0 );
+		assertThat( result.aggregation( termIntegers ) ).isNotNull();
 	}
 
 	@Test
